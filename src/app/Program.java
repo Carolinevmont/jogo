@@ -23,6 +23,9 @@ public class Program {
 				System.out.print("digite a posição: ");
 				ChessPosition source = UI.readChessPosition(sc);
 				
+				boolean[][] possibleMoves = chessMatch.possibleMoves(source);
+				UI.clearScreen();
+				UI.printBoard(chessMatch.getPieces(), possibleMoves);
 				System.out.println();
 				System.out.print("digite o destino: ");
 				ChessPosition target = UI.readChessPosition(sc);
