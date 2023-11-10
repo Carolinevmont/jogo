@@ -38,6 +38,11 @@ public class Program {
 				if (capturedPiece != null) {
 					captured.add(capturedPiece);
 				}
+				if (chessMatch.getPromoted() != null) {
+					System.out.print("Digite a letra a ser promovida = (B/C/R/Q)? ");
+					String type = sc.nextLine();
+					chessMatch.replacePromotedPiece(type);
+				}
 			}	
 			
 			catch (ChessException e) {
@@ -47,7 +52,7 @@ public class Program {
 			
 			catch (InputMismatchException e) {
 				System.out.print(e.getMessage());
-				sc.hasNextLine();
+				sc.hasNextLine(); 
 			}
 		}
 		UI.clearScreen();
